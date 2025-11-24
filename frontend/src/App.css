@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.App {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #f43f5e, #ec4899);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #e11d48, #db2777);
+}
+
+/* Smooth transitions for interactive elements */
+button, .card, .input, .select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom focus styles */
+.focus\:ring-rose-500:focus {
+  --tw-ring-color: #f43f5e;
+}
+
+/* Gradient button hover effects */
+.gradient-btn {
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(135deg, #e11d48, #db2777);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    90deg,
+    #f8fafc 0px,
+    #f1f5f9 40px,
+    #f8fafc 80px
+  );
+  background-size: 200px;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.1);
+}
+
+/* Background pattern */
+.bg-pattern {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(244, 63, 94, 0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Animation for page transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom selection colors */
+::selection {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+/* Service category badges */
+.category-badge {
+  background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+  border: 1px solid #f9a8d4;
+  color: #be185d;
+}
+
+/* Heart animation for wishlist */
+.heart-bounce {
+  animation: heartBounce 0.3s ease;
+}
+
+@keyframes heartBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Backdrop blur for modals */
+.backdrop-blur-custom {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Star rating styles */
+.star-rating {
+  color: #fbbf24;
+  filter: drop-shadow(0 1px 2px rgba(251, 191, 36, 0.3));
+}
+
+/* Price range styling */
+.price-highlight {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Search input enhancements */
+.search-input {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #f43f5e, #ec4899) border-box;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.1);
+}
+
+/* 🔴 Highlight booked dates in react-datepicker */
+.react-datepicker__day--highlighted-booked {
+  background-color: #f87171 !important; /* red */
+  color: white !important;
+  border-radius: 50%;
+}
+.react-datepicker__day--highlighted-booked:hover {
+  background-color: #ef4444 !important;
+}
+
+[data-state="open"] .fixed.inset-0 {
+  overflow-y: auto !important;
+}
+
+.react-datepicker {
+  max-width: 100%;
+  overflow: hidden;
+}
