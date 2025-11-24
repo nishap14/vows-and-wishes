@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 import jwt
 import bcrypt
 from enum import Enum
-from appointment_routes import router as appointment_router
+from backend.appointment_routes import router as appointment_router
 from pydantic import BaseModel, EmailStr, Field
 
 # --- Create app first ---
