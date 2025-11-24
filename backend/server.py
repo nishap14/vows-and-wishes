@@ -27,14 +27,25 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / ".env")
 
 # --- MongoDB connection ---
-mongo_url = os.environ["MONGO_URL"]
+
+mongo_url = os.environ.get("MONGO_URL")
+db_name = os.environ.get("DB_NAME")
+
+if not mongo_url or not db_name:
+    raise RuntimeError("MONGO_URL and DB_NAME must be set in Vercel")
+
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ["DB_NAME"]]
+db = client[db_name]
+
 
 # --- JWT Config ---
 JWT_SECRET = os.environ.get("JWT_SECRET")
+if not JWT_SECRET:
+    raise RuntimeError("JWT_SECRET must be set in Vercel")
+
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_HOURS = 24
+
 
 # --- Security ---
 security = HTTPBearer()
@@ -247,3 +258,7 @@ def home():
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+@app.get("/api/ping")
+async def ping():
+    return {"ok": True}
