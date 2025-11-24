@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.py": {
-      "runtime": "@vercel/python@6.0.1",
-      "maxDuration": 10,
-      "includeFiles": "backend/**"
-    }
-  },
+  "builds": [
+    { "src": "backend/server.py", "use": "@vercel/python" }
+  ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/index.py" }
+    { "src": "/api/(.*)", "dest": "backend/server.py" }
   ]
 }
