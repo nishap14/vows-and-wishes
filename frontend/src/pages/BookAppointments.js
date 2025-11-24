@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-const API_BASE = "http://localhost:8000/api"; // ⚠️ Change if backend runs elsewhere
+import API_BASE_URL from "../../config";
+
+const API_BASE = API_BASE_URL;
 
 const BookAppointment = () => {
   const { serviceId } = useParams(); // from route /book/:serviceId
