@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://127.0.0.1:8000";
-const API = `${BACKEND_URL}/api`;
+import API_BASE_URL from "../../config"; // correct import
+const API = API_BASE_URL;               // correct assignment
+
+
 
 const SingleService = () => {
   const { id } = useParams();

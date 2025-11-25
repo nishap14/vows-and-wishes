@@ -12,9 +12,10 @@ import { toast, Toaster } from 'sonner';
 import SingleService from "./pages/SingleService";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
+import API_BASE_URL from "./config";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://127.0.0.1:8000";
-const API = `${BACKEND_URL}/api`;
+const API = API_BASE_URL; 
+
 
 function App() {
   const [user, setUser] = useState(null);
