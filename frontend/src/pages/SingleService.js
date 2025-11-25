@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-import API_BASE_URL from "../../config"; // correct import
-const API = API_BASE_URL;               // correct assignment
+import API_BASE_URL from "../config"; // correct — points to frontend/src/config.js
+const API = API_BASE_URL;
+
 
 
 
